@@ -10,6 +10,13 @@ if ! command -v openclaw >/dev/null 2>&1; then
   exit 1
 fi
 
+OPENCLAW_VERSION="$(openclaw --version)"
+if [[ "$OPENCLAW_VERSION" != "OpenClaw 2026.6.6"* ]]; then
+  echo "This kit requires OpenClaw 2026.6.6; found: $OPENCLAW_VERSION" >&2
+  echo "Install the pinned version with: npm install --global openclaw@2026.6.6" >&2
+  exit 1
+fi
+
 echo "Building Yibu WebSearch plugin..."
 npm ci --prefix "$PLUGIN_DIR"
 npm run build --prefix "$PLUGIN_DIR"

@@ -17,6 +17,15 @@ This repository does **not** contain OpenClaw itself, API keys, personal OpenCla
 - Node.js and npm
 - OpenClaw `2026.6.6`
 
+## Version Compatibility
+
+This kit intentionally targets the exact stable release `2026.6.6`, Git tag `v2026.6.6`, release commit `8c802aa`. The installer stops when another OpenClaw version is active.
+
+OpenClaw uses `YYYY.M.PATCH` version names. Starting with the June 2026 release process, the third component is a sequential monthly release-train number, not a calendar day. Therefore `2026.6.6` means the sixth June 2026 release train, not June 6, 2026.
+
+- [Official OpenClaw 2026.6.6 release](https://github.com/openclaw/openclaw/releases/tag/v2026.6.6)
+- [Official npm package](https://www.npmjs.com/package/openclaw/v/2026.6.6)
+
 Install OpenClaw if necessary:
 
 ```bash
