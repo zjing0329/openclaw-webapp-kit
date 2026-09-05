@@ -1,4 +1,4 @@
-# OpenClaw DeepDiver Kit
+# OpenClaw Web App Kit
 
 An OpenClaw 2026.6.6 starter kit for generating local React/Vite artifacts with generation-time web research.
 
@@ -26,8 +26,8 @@ npm install --global openclaw@2026.6.6
 ## Install
 
 ```bash
-git clone https://github.com/zjing0329/openclaw-deepdiver-kit.git
-cd openclaw-deepdiver-kit
+git clone https://github.com/zjing0329/openclaw-webapp-kit.git
+cd openclaw-webapp-kit
 ./scripts/install.sh
 ./scripts/configure-yibu.sh
 openclaw gateway restart
