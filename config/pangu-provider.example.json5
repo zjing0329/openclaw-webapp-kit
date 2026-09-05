@@ -20,10 +20,12 @@
             contextWindow: 131072,
             maxTokens: 4096,
             compat: {
+              supportsStore: false,
               supportsReasoningEffort: false,
               supportsUsageInStreaming: false,
               requiresStringContent: true,
-              strictMessageKeys: true,
+              strictMessageKeys: false,
+              maxTokensField: "max_tokens",
             },
             cost: {
               input: 0,

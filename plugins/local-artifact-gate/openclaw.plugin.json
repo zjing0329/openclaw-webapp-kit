@@ -1,0 +1,53 @@
+{
+  "id": "local-artifact-gate",
+  "name": "Local Artifact Gate",
+  "description": "Local React/Vite generation guidance and a build-success finalization gate.",
+  "version": "0.3.0",
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "tools": [
+      "local_artifact_verify"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "allowedRoots": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Absolute directories under which artifacts may be verified. Defaults to ~/.openclaw/workspace."
+      },
+      "buildTimeoutSeconds": {
+        "type": "integer",
+        "minimum": 30,
+        "maximum": 1800,
+        "default": 60
+      },
+      "maxRevisionAttempts": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 12
+      },
+      "maxRecoveryAttempts": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 1
+      },
+      "recoveryTimeoutSeconds": {
+        "type": "integer",
+        "minimum": 60,
+        "maximum": 1800,
+        "default": 420
+      },
+      "enforceNoRuntimeNetwork": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  }
+}
