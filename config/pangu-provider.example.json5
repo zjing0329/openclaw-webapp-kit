@@ -1,0 +1,48 @@
+{
+  models: {
+    mode: "merge",
+    providers: {
+      pangu: {
+        baseUrl: "https://apigw-dgg-b0.huawei.com/api/pangu/v1",
+        apiKey: "${PANGU_API_KEY}",
+        auth: "api-key",
+        api: "openai-completions",
+        headers: {
+          "X-HW-ID": "${PANGU_HW_ID}",
+          "X-HW-AppKey": "${PANGU_HW_APP_KEY}",
+        },
+        models: [
+          {
+            id: "pangu92b-ddl",
+            name: "pangu92b-ddl",
+            reasoning: false,
+            input: ["text"],
+            contextWindow: 131072,
+            maxTokens: 4096,
+            compat: {
+              supportsReasoningEffort: false,
+              supportsUsageInStreaming: false,
+              requiresStringContent: true,
+              strictMessageKeys: true,
+            },
+            cost: {
+              input: 0,
+              output: 0,
+              cacheRead: 0,
+              cacheWrite: 0,
+            },
+            api: "openai-completions",
+          },
+        ],
+        timeoutSeconds: 1800,
+      },
+    },
+  },
+  agents: {
+    defaults: {
+      model: {
+        primary: "pangu/pangu92b-ddl",
+      },
+    },
+  },
+}

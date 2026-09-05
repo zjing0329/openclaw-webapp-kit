@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.log
+*.tgz
+coverage/
+dist/
+node_modules/
+secrets/
+.openclaw/
+.openclaw-artifact-verification.json

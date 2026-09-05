@@ -1,0 +1,46 @@
+{
+  "id": "yibu-websearch",
+  "name": "Yibu Web Search",
+  "description": "Yibu Serper-compatible web search and Jina Reader providers for OpenClaw.",
+  "version": "0.1.0",
+  "setup": {
+    "providers": [
+      {
+        "id": "yibu",
+        "envVars": [
+          "YIBU_KEY"
+        ]
+      }
+    ]
+  },
+  "uiHints": {
+    "yibuFetchTimeoutSeconds": {
+      "label": "Yibu Reader Timeout",
+      "help": "Maximum seconds for Yibu Jina Reader page extraction."
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "yibuFetchTimeoutSeconds": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 300,
+        "description": "Timeout for Yibu Jina Reader calls. Default: 120 seconds."
+      }
+    },
+    "additionalProperties": false
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "contracts": {
+    "webSearchProviders": [
+      "yibu"
+    ],
+    "webFetchProviders": [
+      "yibu"
+    ],
+    "tools": []
+  }
+}
